@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import time
 
 # Step 1: Load the image
-image = cv2.imread("image6.jpg")
+image = cv2.imread("img6.jpg")
 
 if image is None:
     print("Image not found!")
