@@ -1,0 +1,5 @@
+Technique,Brightness (mean),Contrast (std dev),Dynamic range,Entropy (bits),Feature visibility (Laplacian variance),Edge density
+Original,128.506931,9.942553,66.000000,5.283926,92.034455,0.004406
+Contrast Stretching,148.295891,38.410431,255.000000,5.283926,1368.302636,0.014861
+Histogram Equalization,131.224900,73.779268,255.000000,5.254980,5183.709927,0.266633
+CLAHE,130.157146,13.298729,98.000000,5.761785,678.553492,0.010315
