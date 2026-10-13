@@ -1,0 +1,40 @@
+# BTCS301P-AS02 - Answers to Questions
+
+## 1. What is image contrast, and why is it important in image processing?
+Image contrast is the difference in intensity or brightness between different regions, objects, and the background of an image. A high-contrast image has clearly distinguishable dark and bright regions, whereas a low-contrast image has pixel values concentrated within a narrow intensity range. Contrast is important because it makes edges, textures, structures, and objects easier to distinguish. Good contrast improves human interpretation and also helps computer-vision operations such as feature extraction, segmentation, object detection, and recognition.
+
+## 2. Explain the concept of an image histogram. What information does it provide?
+An image histogram is a statistical representation of the distribution of pixel intensity values. For an 8-bit grayscale image, the horizontal axis normally represents intensity levels from 0 (black) to 255 (white), and the vertical axis represents the number or frequency of pixels at each intensity. It indicates whether an image is predominantly dark, bright, low contrast, or well distributed. A narrow histogram usually indicates low contrast, while a histogram distributed over a broader range generally indicates greater intensity variation.
+
+## 3. Differentiate between Histogram Stretching and Histogram Equalization.
+**Histogram stretching (contrast stretching)** applies a usually linear transformation that maps the current minimum and maximum pixel values to a wider target range, commonly 0-255. It preserves the relative ordering of intensities and mainly expands the existing dynamic range.
+
+**Histogram equalization** uses the cumulative distribution function (CDF) of the histogram to perform a nonlinear intensity mapping. Its purpose is to redistribute frequently occurring intensity values over a broader range and improve global contrast. Unlike stretching, it does not simply scale the original minimum and maximum values linearly.
+
+## 4. What is Contrast Limited Adaptive Histogram Equalization (CLAHE)? How does it differ from standard Histogram Equalization?
+CLAHE is an adaptive contrast-enhancement method that divides an image into small local regions called tiles, equalizes each region, limits or clips excessively high histogram bins, and then combines the neighboring tiles using interpolation. The clip limit reduces excessive amplification of noise.
+
+Standard histogram equalization uses one histogram and one global intensity mapping for the entire image. CLAHE uses local histograms, adapts to spatially varying illumination, and controls over-enhancement, making it better for images that contain both dark and bright regions.
+
+## 5. Why is histogram equalization commonly applied before feature extraction and image segmentation?
+Feature extraction and segmentation depend on visible intensity changes, edges, textures, and separation between foreground and background. In a low-contrast image, important features may occupy very similar intensity ranges and can be difficult to distinguish. Histogram equalization can increase the separation between intensity levels, make edges and structural details more visible, and therefore improve the reliability of thresholding, key-point detection, texture analysis, and other feature-based algorithms.
+
+## 6. Mention three real-world applications where histogram equalization is widely used.
+Three common applications are:
+1. **Medical imaging** - improving visibility of structures in X-ray, CT, MRI, ultrasound, and other diagnostic images.
+2. **Satellite and remote-sensing images** - enhancing terrain, vegetation, water bodies, roads, and other surface features.
+3. **Low-light photography and surveillance** - improving visibility of people, objects, and scene details captured under poor illumination.
+
+## 7. What are the limitations of global histogram equalization?
+Global histogram equalization has several limitations. It applies the same mapping to the entire image, so it may perform poorly when illumination varies from region to region. It can over-enhance some areas, change the average brightness, produce an unnatural appearance, and amplify noise in nearly uniform regions. Small local details may also remain poorly enhanced if they do not significantly influence the global histogram.
+
+## 8. How does contrast enhancement improve the performance of object detection and recognition systems?
+Contrast enhancement increases the distinction between objects, edges, textures, and the background. This can produce stronger gradients and clearer boundaries, making feature descriptors and key points more reliable. It can also improve thresholding and segmentation, which helps detectors isolate candidate objects. As a result, object-detection and recognition systems may operate more consistently on poorly illuminated or low-contrast images. However, excessive enhancement can also amplify noise, so the enhancement method and parameters should be selected appropriately.
+
+## 9. Compare histogram-based enhancement techniques with brightness adjustment methods.
+Brightness adjustment mainly shifts pixel intensities upward or downward, for example by adding a constant or applying a simple gain. It makes the whole image brighter or darker but does not necessarily increase the separation between similar intensity levels.
+
+Histogram-based enhancement analyzes the distribution of pixel intensities and remaps them to improve contrast. Contrast stretching expands the dynamic range, histogram equalization redistributes intensities globally, and CLAHE redistributes them locally with contrast limiting. Therefore, histogram-based methods are usually more effective when the objective is to reveal hidden detail rather than merely change overall brightness.
+
+## 10. Why is CLAHE preferred for medical imaging and low-light image enhancement?
+Medical and low-light images often contain important local details under non-uniform illumination. Global equalization can over-amplify bright regions or noise while failing to enhance small structures appropriately. CLAHE processes local tiles, so it can improve contrast in different regions independently, and its clip limit restricts excessive amplification. This combination makes fine structures more visible while reducing the risk of severe noise amplification, which is why CLAHE is frequently preferred for these image types.

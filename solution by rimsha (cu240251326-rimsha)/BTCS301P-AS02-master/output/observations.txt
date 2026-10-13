@@ -1,0 +1,50 @@
+BTCS301P-AS02 - COMPUTED OBSERVATIONS
+================================================
+
+The program compared the original grayscale image with contrast stretching,
+global histogram equalization, and CLAHE.
+
+Original:
+  - Brightness (mean): 128.5069
+  - Contrast (std dev): 9.9426
+  - Dynamic range: 66.0000
+  - Entropy (bits): 5.2839
+  - Feature visibility (Laplacian variance): 92.0345
+  - Edge density: 0.0044
+
+Contrast Stretching:
+  - Brightness (mean): 148.2959
+  - Contrast (std dev): 38.4104
+  - Dynamic range: 255.0000
+  - Entropy (bits): 5.2839
+  - Feature visibility (Laplacian variance): 1368.3026
+  - Edge density: 0.0149
+
+Histogram Equalization:
+  - Brightness (mean): 131.2249
+  - Contrast (std dev): 73.7793
+  - Dynamic range: 255.0000
+  - Entropy (bits): 5.2550
+  - Feature visibility (Laplacian variance): 5183.7099
+  - Edge density: 0.2666
+
+CLAHE:
+  - Brightness (mean): 130.1571
+  - Contrast (std dev): 13.2987
+  - Dynamic range: 98.0000
+  - Entropy (bits): 5.7618
+  - Feature visibility (Laplacian variance): 678.5535
+  - Edge density: 0.0103
+
+Highest measured standard-deviation contrast: Histogram Equalization
+Largest measured dynamic range: Contrast Stretching
+Highest measured edge density: Histogram Equalization
+
+Interpretation:
+- Contrast stretching expands the occupied intensity range approximately linearly.
+- Global histogram equalization redistributes intensities using the image-wide CDF.
+- CLAHE operates on local tiles and clips excessive histogram peaks, so it is usually
+  more suitable when illumination varies across an image and when noise amplification
+  must be limited.
+- A visually useful result should improve detail visibility without introducing excessive
+  noise, over-enhancement, or unnatural brightness.

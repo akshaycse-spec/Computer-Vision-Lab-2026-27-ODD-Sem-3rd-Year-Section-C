@@ -1,0 +1,46 @@
+BTCS301P-AS01 - EXPERIMENT 1 OBSERVATIONS
+================================================
+
+1. Image Properties
+- Dimensions (NumPy shape): (640, 960, 3)
+- Resolution: 960 x 640
+- Total pixels: 614400
+- Number of channels: 3
+- Data type: uint8
+
+2. JPEG vs PNG
+- JPEG size: 64927 bytes
+- PNG size: 224589 bytes
+- Smaller file for this input: JPEG
+- JPEG normally uses lossy compression, whereas PNG is lossless. Therefore, JPEG often
+  produces a smaller file for natural images, while PNG better preserves exact pixel values.
+
+3. Color Space Conversion
+- Grayscale reduces a three-channel color image to one intensity channel.
+- HSV separates hue/saturation from brightness, which is useful for color-based segmentation.
+- LAB separates perceptual lightness (L) from color components (A and B), which is useful
+  when illumination and color information need to be handled separately.
+
+4. Geometric Transformations
+- Resizing changes spatial dimensions and may remove or interpolate information.
+- Rotation changes orientation and introduces border regions when the output canvas is fixed.
+- Horizontal/vertical flipping reflects the image and preserves its dimensions.
+
+5. Negative / Complement
+- The negative reverses the intensity relationship: dark pixels become bright and bright
+  pixels become dark. For an 8-bit image, each channel is transformed approximately as 255-I.
+
+6. Region of Interest (ROI)
+- Coordinates: x=240:720, y=160:480
+- ROI shape: (320, 480, 3)
+- Mean BGR: (136.39, 135.23, 165.27)
+- Min intensity: 23
+- Max intensity: 255
+- Standard deviation: 59.45
+
+7. Significance of Preprocessing
+Preprocessing standardizes image size and representation, reduces unnecessary information,
+improves contrast or color separability, isolates relevant regions, and reduces variation caused
+by orientation, illumination, or acquisition conditions. This makes subsequent feature
+extraction, segmentation, object detection, classification, and deep-learning pipelines more
+stable and computationally efficient.
