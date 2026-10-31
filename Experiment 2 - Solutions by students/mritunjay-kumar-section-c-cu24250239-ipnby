@@ -1,0 +1,22 @@
+Basic knowledge of digital image processing 
+• Familiarity with Python programming 
+• Python libraries: OpenCV (cv2), NumPy, and Matplotlib 
+• Understanding of image kernels and convolution operations 
+• Jupyter Notebook, Google Colab, or Visual Studio Code 
+ 
+Steps 
+1. Import the required libraries and load a grayscale or color image for processing. 
+2. Display the original image and analyze its visual characteristics. 
+3. Apply Gaussian Blur to reduce image noise while preserving important structures. 
+4. Apply Median Filtering to remove impulse (salt-and-pepper) noise from the image. 
+5. Apply Average (Mean) Filtering and compare its smoothing performance with Gaussian 
+filtering. 
+6. Implement Laplacian Filtering to enhance image edges and fine details. 
+7. Apply Sobel Edge Detection in both horizontal and vertical directions to detect image 
+gradients. 
+8. Compare the outputs of different low-pass and high-pass filters in terms of noise 
+reduction, edge preservation, and computational performance. 
+9. Display the original and filtered images along with suitable observations highlighting 
+the strengths and limitations of each filtering technique. 
+10. Interpret  the  results  and  discuss  the  applications  of  spatial  filtering  in  real-world 
+computer vision system
